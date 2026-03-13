@@ -5,8 +5,7 @@
 <h1 align="center">RTA VTC</h1>
 
 <p align="center">
-  ระบบประชุมทางไกลผ่านวิดีโอสำหรับกองทัพบก<br>
-  สร้างด้วย <a href="https://electronjs.org/">Electron</a> เชื่อมต่อกับ <a href="https://telemeet.rta.mi.th">telemeet.rta.mi.th</a>
+  ระบบประชุมทางไกลผ่านวิดีโอสำหรับกองทัพบก
 </p>
 
 <p align="center">
