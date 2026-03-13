@@ -16,7 +16,6 @@ import {
 import { SettingsContainer, TogglesContainer } from '../styled';
 
 import ServerTimeoutField from './ServerTimeoutField';
-import ServerURLField from './ServerURLField';
 import SettingToggle from './SettingToggle';
 
 
