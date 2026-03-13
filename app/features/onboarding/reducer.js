@@ -39,8 +39,6 @@ export default (state = DEFAULT_STATE, action) => {
         };
 
     case SKIP_ONBOARDING: {
-        const allSteps = [].concat(...Object.values(onboardingSteps));
-
         return {
             ...state,
             activeOnboarding: undefined,
