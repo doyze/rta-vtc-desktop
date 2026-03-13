@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="resources/icons/icon.png" alt="RTA VTC" width="128">
+  <img src="resources/icon.png" alt="RTA VTC" width="128">
 </p>
 
 <h1 align="center">RTA VTC</h1>
