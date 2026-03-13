@@ -18,7 +18,10 @@ export default class Logo extends Component {
             <img
                 alt = 'RTA VTC'
                 src = { logoURL }
-                style = {{ height: 32, width: 'auto' }} />
+                                    style = {{
+                                                                height: 32,
+                                                                width: 'auto'
+                                    }} />
         );
     }
 }
