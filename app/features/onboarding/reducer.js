@@ -7,10 +7,12 @@ import {
 import { onboardingSteps } from './constants';
 
 
+const allSteps = [].concat(...Object.values(onboardingSteps));
+
 const DEFAULT_STATE = {
     activeOnboarding: undefined,
     activeOnboardingSection: undefined,
-    onboardingShown: []
+    onboardingShown: allSteps
 };
 
 /**

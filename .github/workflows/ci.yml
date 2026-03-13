@@ -1,14 +1,13 @@
 name: CI
 
 on:
-  # Trigger the workflow on push or pull request,
-  # but only for the master branch
   push:
     branches:
       - master
   pull_request:
     branches:
       - master
+  workflow_dispatch:
 
 jobs:
   build-linux:
@@ -29,10 +28,10 @@ jobs:
       with:
         name: linux-binaries
         path: |
-          dist/jitsi-meet-amd64.deb
-          dist/jitsi-meet-x86_64.AppImage
-          dist/jitsi-meet-arm64.deb
-          dist/jitsi-meet-arm64.AppImage
+          dist/rta-vtc-x86_64.AppImage
+          dist/rta-vtc-amd64.deb
+          dist/rta-vtc-arm64.AppImage
+          dist/rta-vtc-arm64.deb
           dist/latest-linux.yml
           dist/latest-linux-arm64.yml
   build-mac:
@@ -64,8 +63,8 @@ jobs:
       with:
         name: mac-binaries
         path: |
-          dist/jitsi-meet.dmg
-          dist/jitsi-meet.zip
+          dist/rta-vtc.dmg
+          dist/rta-vtc.zip
           dist/latest-mac.yml
   build-windows:
     name: Windows
@@ -85,7 +84,7 @@ jobs:
       with:
         name: windows-binaries
         path: |
-          dist/jitsi-meet.exe
+          dist/rta-vtc.exe
           dist/latest.yml
   lint:
     runs-on: ubuntu-latest

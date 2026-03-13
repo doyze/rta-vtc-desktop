@@ -1,199 +1,117 @@
-# Jitsi Meet Electron
+<p align="center">
+  <img src="resources/icons/icon.png" alt="RTA VTC" width="128">
+</p>
 
-Desktop application for [Jitsi Meet] built with [Electron].
+<h1 align="center">RTA VTC</h1>
 
-![](screenshot.png)
+<p align="center">
+  ระบบประชุมทางไกลผ่านวิดีโอสำหรับกองทัพบก<br>
+  สร้างด้วย <a href="https://electronjs.org/">Electron</a> เชื่อมต่อกับ <a href="https://telemeet.rta.mi.th">telemeet.rta.mi.th</a>
+</p>
 
-## Features
+<p align="center">
+  <img src="screenshot.png" alt="Screenshot" width="600">
+</p>
 
-- [End-to-End Encryption](https://jitsi.org/blog/e2ee/) support (BETA)
-- Works with any Jitsi Meet deployment
-- Built-in auto-updates
-- Screen sharing
-- ~Remote control~ (currently [disabled](https://github.com/jitsi/jitsi-meet-electron/issues/483) due to [security issues](https://github.com/jitsi/security-advisories/blob/master/advisories/JSA-2020-0001.md))
-- Always-On-Top window
-- Support for deeplinks such as `jitsi-meet://myroom` (will open `myroom` on the configured Jitsi instance) or `jitsi-meet://jitsi.mycompany.com/myroom` (will open `myroom` on the Jitsi instance running on `jitsi.mycompany.com`)
+---
 
-## Installation
+## ดาวน์โหลด
 
-Download our latest release and you're off to the races!
+| Platform | ไฟล์ติดตั้ง |
+|----------|------------|
+| **Windows** | [rta-vtc.exe](../../releases/latest/download/rta-vtc.exe) |
+| **macOS** | [rta-vtc.dmg](../../releases/latest/download/rta-vtc.dmg) |
+| **Linux (AppImage)** | [x86_64](../../releases/latest/download/rta-vtc-x86_64.AppImage) / [arm64](../../releases/latest/download/rta-vtc-arm64.AppImage) |
+| **Linux (Deb)** | [x86_64](../../releases/latest/download/rta-vtc-amd64.deb) / [arm64](../../releases/latest/download/rta-vtc-arm64.deb) |
 
-| Windows | macOS | GNU/Linux (AppImage) | GNU/Linux (Deb) |
-| -- | -- | -- | -- |
-| [Download](https://github.com/jitsi/jitsi-meet-electron/releases/latest/download/jitsi-meet.exe) | [Download](https://github.com/jitsi/jitsi-meet-electron/releases/latest/download/jitsi-meet.dmg) | [x64_64](https://github.com/jitsi/jitsi-meet-electron/releases/latest/download/jitsi-meet-x86_64.AppImage) [arm64](https://github.com/jitsi/jitsi-meet-electron/releases/latest/download/jitsi-meet-arm64.AppImage) | [x86_64](https://github.com/jitsi/jitsi-meet-electron/releases/latest/download/jitsi-meet-amd64.deb) [arm64](https://github.com/jitsi/jitsi-meet-electron/releases/latest/download/jitsi-meet-arm64.deb) |
+---
 
-### Third-Party builds
+## คุณสมบัติ
 
-[<img src="https://dl.flathub.org/assets/badges/flathub-badge-en.svg"
-     alt="Download On Flathub"
-     height="60">](https://flathub.org/apps/details/org.jitsi.jitsi-meet)
+- การประชุมทางวิดีโอผ่าน server `telemeet.rta.mi.th`
+- รองรับ End-to-End Encryption (E2EE)
+- แชร์หน้าจอ (Screen Sharing)
+- หน้าต่าง Always-on-Top (Picture-in-Picture)
+- อัปเดตอัตโนมัติ (Auto-update)
+- รองรับ Deeplink: `jitsi-meet://ชื่อห้อง`
+- รองรับ Windows, macOS และ Linux
 
-### Homebrew
+---
 
-For *macOS* users, you can install the application using the following command:
+## การติดตั้ง
 
-```
-brew install --cask jitsi-meet
-```
+### Windows
+1. ดาวน์โหลดไฟล์ `rta-vtc.exe`
+2. ดับเบิ้ลคลิกเพื่อติดตั้ง
+3. เปิดแอป **RTA VTC** จาก Start Menu
 
-## Development
+### macOS
+1. ดาวน์โหลดไฟล์ `rta-vtc.dmg`
+2. เปิดไฟล์ `.dmg` แล้วลาก RTA VTC ไปที่โฟลเดอร์ Applications
+3. เปิดแอปจาก Launchpad
 
-If you want to hack on this project, here is how you do it.
-
-<details><summary>Show building instructions</summary>
-
-#### Installing dependencies
-
-Install Node.js 22 first (or if you use [nvm](https://github.com/nvm-sh/nvm), switch to it by running `nvm use`).
-
-<details><summary>Extra dependencies for Windows</summary>
-
+### Linux
 ```bash
-npm install --global --production windows-build-tools
+# AppImage
+chmod +x rta-vtc-x86_64.AppImage
+./rta-vtc-x86_64.AppImage
+
+# Deb
+sudo dpkg -i rta-vtc-amd64.deb
 ```
-</details>
 
-<details><summary>Extra dependencies for GNU/Linux</summary>
+---
 
-X11, PNG, and zlib development packages are necessary. On Debian-like systems, they can be installed as follows:
+## การใช้งาน
 
-```bash
-sudo apt install libx11-dev zlib1g-dev libpng-dev libxtst-dev
-```
-</details>
+1. เปิดแอป **RTA VTC**
+2. พิมพ์ชื่อห้องประชุมในช่องกรอก
+3. กด **GO** เพื่อเข้าร่วมประชุม
+4. อนุญาตการเข้าถึงกล้องและไมโครโฟนเมื่อถูกถาม
 
-Install all required packages:
+---
 
+## สำหรับนักพัฒนา
+
+<details><summary>แสดงขั้นตอนการ build</summary>
+
+### ความต้องการ
+- Node.js 22+ (ดู `.nvmrc`)
+- Windows: `npm install --global --production windows-build-tools`
+- Linux: `sudo apt install libx11-dev zlib1g-dev libpng-dev libxtst-dev`
+
+### ติดตั้ง dependencies
 ```bash
 npm install
 ```
 
-#### Starting in development mode
-
+### รันในโหมด development
 ```bash
 npm start
 ```
 
-The debugger tools are available when running in dev mode, and can be activated with keyboard shortcuts as [defined here](https://github.com/sindresorhus/electron-debug#features).
-
-They can also be displayed automatically with the application `--show-dev-tools` command line flag, or with the `SHOW_DEV_TOOLS` environment variable as shown:
-
-```bash
-SHOW_DEV_TOOLS=true npm start
-```
-
-#### Building the production distribution
-
+### สร้างไฟล์ติดตั้ง
 ```bash
 npm run dist
 ```
 
-#### Working with `jitsi-meet-electron-sdk`
-
-[`jitsi-meet-electron-sdk`] is a helper package which implements many features
-such as remote control and the always-on-top window. If new features are to be
-added or tested, running with a local version of these utils is very handy.
-
-By default, the @jitsi/electron-sdk is build from `npm`. The default dependency path in `package.json` is:
-
-```json
-"@jitsi/electron-sdk": "^3.0.0"
-```
-
-To work with a local copy, you must change the path to:
-
-```json
-"@jitsi/electron-sdk": "file:///Users/name/jitsi-meet-electron-sdk-copy",
-```
-
-To build the project, you must force it to take the sources, as `npm update` will
-not do it.
-
-```bash
-npm install @jitsi/electron-sdk --force
-```
-
-NOTE: Also check the [`jitsi-meet-electron-sdk` `README`] to see how to configure
-your environment.
-
-#### Publishing
-
-1. Create release branch: `git checkout -b release-1-2-3`, replacing `1-2-3` with the desired release version
-2. Increment the version: `npm version patch`, replacing `patch` with `minor` or `major` as required
-3. Push release branch to github: `git push -u origin release-1-2-3`
-4. Create PR: `gh pr create`
-5. Once PR is reviewed and ready to merge, create draft Github release: `gh release create v1.2.3 --draft --title 1.2.3`, replacing `v1.2.3` and `1.2.3` with the desired release version
-6. Merge PR
-7. Github action will build binaries and attach to the draft release
-8. Test binaries from draft release
-9. If all tests are fine, publish draft release
+ไฟล์ติดตั้งจะอยู่ในโฟลเดอร์ `dist/`
 
 </details>
 
-## Known issues
+---
+
+## ปัญหาที่ทราบ
 
 ### Windows
+- จะมีคำเตือนว่าแอปไม่ได้ลงนาม (unsigned) เมื่อติดตั้งครั้งแรก สามารถกด "More info" > "Run anyway" ได้
 
-A warning that the app is unsigned will show up upon first install. This is expected.
+### Linux
+- Ubuntu 22.04+: ต้องติดตั้ง `libfuse2` ก่อน: `sudo apt install libfuse2`
+- Ubuntu 24.04+: ถ้าเจอ sandbox error ให้รันด้วย `--no-sandbox`
 
-### macOS
-
-None
-
-### GNU/Linux
-
-* If you can't execute the file directly after downloading it, try running `chmod u+x ./jitsi-meet-x86_64.AppImage`
-
-* On Ubuntu 22.04 and later, the AppImage will fail with a FUSE error (as the AppImage uses `libfuse2`, while 22.04 comes with `libfuse3` by default):
-
-  ```
-  dlopen(): error loading libfuse.so.2
-  ```
-
-  To fix this, install `libfuse2` as follows:
-
-  ```
-  sudo apt install libfuse2
-  ```
-
-* On Ubuntu 24.04 and later, the AppImage will fail with a sandboxing error (`The SUID sandbox helper binary was found, but is not configured correctly...`)
-  This is due to an AppArmor conflict that restricts unprivileged user namespaces ([jitsi/jitsi-meet-electron#965](https://github.com/jitsi/jitsi-meet-electron/issues/965),
-  [Ubuntu blog post](https://ubuntu.com/blog/ubuntu-23-10-restricted-unprivileged-user-namespaces)).
-
-  To work around this, disable the use of the sandbox with `--no-sandbox`:
-
-  ```
-  ./jitsi-meet-x86_64.AppImage --no-sandbox
-  ```
-  
-* If you experience a blank page after a Jitsi server upgrades, try removing the local cache files:
-
-  ```
-  rm -rf ~/.config/Jitsi\ Meet/
-  ```
-
-## Translations
-
-The JSON files contain all the strings inside the application, and can be translated [here](/app/i18n/lang).
-
-New translations require the addition of a line in [index.js](/app/i18n/index.js).
-
-`Localize desktop file on linux` requires the addition of a line in [package.json](/package.json).
-Please search for `Comment[hu]` as an example to help add your translation of the English string `Jitsi Meet Desktop App` for your language.
+---
 
 ## License
 
-Apache License 2.0. See the [LICENSE] file.
-
-## Community
-
-Jitsi is built by a large community of developers. If you want to participate,
-please join the [community forum].
-
-[Jitsi Meet]: https://github.com/jitsi/jitsi-meet
-[Electron]: https://electronjs.org/
-[latest release]: https://github.com/jitsi/jitsi-meet-electron/releases/latest
-[`jitsi-meet-electron-sdk`]: https://github.com/jitsi/jitsi-meet-electron-sdk
-[`jitsi-meet-electron-sdk` `README`]: https://github.com/jitsi/jitsi-meet-electron-sdk/blob/master/README.md
-[community forum]: https://community.jitsi.org/
-[LICENSE]: LICENSE
+Apache License 2.0 - ดูไฟล์ [LICENSE](LICENSE)

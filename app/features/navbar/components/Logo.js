@@ -1,8 +1,7 @@
 
-import Icon from '@atlaskit/icon';
 import React, { Component } from 'react';
 
-import LogoSVG from '../../../images/logo.svg';
+import logoURL from '../../../images/logo.png';
 
 /**
  * Logo component.
@@ -16,10 +15,10 @@ export default class Logo extends Component {
      */
     render() {
         return (
-            <Icon
-                glyph = { LogoSVG }
-                size = 'xlarge' />
+            <img
+                alt = 'RTA VTC'
+                src = { logoURL }
+                style = {{ height: 32, width: 'auto' }} />
         );
     }
 }
-

@@ -34,11 +34,7 @@ class Navbar extends Component {
      * @returns {ReactElement[]}
      */
     _getSecondaryActions() {
-        return [
-            <AkGlobalItem key = { 0 }>
-                <HelpButton />
-            </AkGlobalItem>
-        ];
+        return [];
     }
 
     /**

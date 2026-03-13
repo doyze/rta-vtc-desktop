@@ -146,7 +146,8 @@ class Conference extends Component {
             disableAGC: this.props._disableAGC,
             prejoinConfig: {
                 enabled: true
-            }
+            },
+            defaultLanguage: 'th'
         };
 
         const interfaceConfigOverwrite = {

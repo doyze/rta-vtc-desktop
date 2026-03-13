@@ -70,9 +70,6 @@ class SettingsDrawer extends Component {
                 primaryIcon = { <Logo /> } >
                 <DrawerContainer>
                     <SettingsContainer>
-                        <SpotlightTarget name = 'server-setting'>
-                            <ServerURLField />
-                        </SpotlightTarget>
                         <SpotlightTarget name = 'server-timeout'>
                             <ServerTimeoutField />
                         </SpotlightTarget>
